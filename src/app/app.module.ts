@@ -18,6 +18,7 @@ import { ViewOrdersPageComponent } from 'src/app/pages/admin/view-orders-page/vi
 import { ViewUsersPageComponent } from 'src/app/pages/admin/view-users-page/view-users-page.component';
 import { ViewUserPageComponent } from 'src/app/pages/admin/view-user-page/view-user-page.component';
 import { ProfileComponent } from 'src/app/pages/user/profile/profile.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,9 +41,12 @@ import { ProfileComponent } from 'src/app/pages/user/profile/profile.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    HttpClientModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

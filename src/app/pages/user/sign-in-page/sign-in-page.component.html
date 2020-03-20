@@ -1,22 +1,31 @@
-<html>
-<!-- <head>
-    <link rel="stylesheet" type="text/css" href="sign-in-page.component.scss">   
-</head> -->
-    <body>
-    <div class="login-box">
-    <img src="../../../../assets/avatar.png" class="avatar">
-        <h1>Login Here</h1>
-            <form>
-            <p>Username</p>
-            <input type="text" name="username" placeholder="Enter Username">
-            <p>Password</p>
-            <input type="password" name="password" placeholder="Enter Password">
-            <input type="submit" name="submit" value="Login">
-            <a href="#">Forget Password</a>    
-            </form>
-        
-        
+<div class="container" id="outline">
+        <div class="container" id="signInTxt">
+            <h3>Sign In<i class="fas fa-user-plus"></i></h3>
         </div>
+        <form class="container" id="signInForm">
+            <div class="form-group row">
+                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="Email" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password" />
+                </div>
+            </div>
     
-    </body>
-</html>
+    
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-outline-success" id="submitBtn"
+                        style="justify-content: center; display: flex;">
+                        Sign In
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    

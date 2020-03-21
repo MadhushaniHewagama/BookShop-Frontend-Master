@@ -12,4 +12,6 @@ export class AddBookPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  url = './assets/images/demo.jpg'
+
 }

@@ -45,9 +45,8 @@ export class ProfileComponent implements OnInit {
       tel: new FormControl(this.user.tel)    
     })   
   }
-
+//update edited values
   public update():void{
-    console.log("sdhbjs...."+JSON.stringify(this.profileForm.value));
     console.log(this.profileForm.valid)
     if(this.profileForm.valid){     
       this.userService.updateUser(this.user).subscribe(
@@ -83,6 +82,8 @@ export class ProfileComponent implements OnInit {
       
     }
   }
+
+  
   delete(){
     this.user.profile_pic='';
   

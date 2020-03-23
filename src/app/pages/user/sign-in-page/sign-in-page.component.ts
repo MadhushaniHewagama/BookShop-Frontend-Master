@@ -11,11 +11,15 @@ export class SignInPageComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.getTest().subscribe(
-      res => { console.log(res); },
-      err => { console.log(err); }
+    // this.userService.getTest().subscribe(
+    //   res => { console.log(res); },
+    //   err => { console.log(err); }
 
-    )
+    // )
   }
 
+  public signIn():void{
+    console.log("sign in");
+
+  }
 }

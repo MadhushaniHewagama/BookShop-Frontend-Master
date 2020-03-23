@@ -17,6 +17,15 @@ export class UserService {
     const url =`${API_URL}/test`;
     return this.httpClient.get(url);
   }
+
+  //login
+  public login(email:string):Observable<any>{
+    let params=new HttpParams();
+    params=params.set('email',email);
+    const url =`${API_URL}/user/login`;
+    return this.httpClient.get(url,{params:params});
+  }
+
   //add user
   public addUser(user:User): Observable<any>{
     const url = `${API_URL}/user`;

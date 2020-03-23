@@ -4,6 +4,8 @@ import { SignInPageComponent } from './pages/user/sign-in-page/sign-in-page.comp
 import { SignUpPageComponent } from './pages/user/sign-up-page/sign-up-page.component';
 import {ProfileComponent} from './pages/user/profile/profile.component'
 import { AddBookPageComponent } from './pages/admin/add-book-page/add-book-page.component';
+import { AdminHomePageComponent } from './pages/admin/admin-home-page/admin-home-page.component';
+import { UserHomePageComponent } from './pages/user/user-home-page/user-home-page.component';
 
 const routes: Routes = [
   {
@@ -26,7 +28,16 @@ const routes: Routes = [
   {
     path:'addBook',
     component:AddBookPageComponent
+  },
+  {
+    path: 'userHome',
+    component: UserHomePageComponent
+  },
+  {
+    path:'adminHome',
+    component: AdminHomePageComponent
   }
+
 
 ];
 

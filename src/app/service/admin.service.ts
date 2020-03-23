@@ -17,7 +17,7 @@ export class AdminService {
    * addBook
    */
   public addBook(book:Book): Observable<any> {
-    const url = `${API_URL}/book`
+    const url = `${API_URL}/admin/book`
     return this.httpClient.post(url, book);
   }
 }

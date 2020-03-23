@@ -59,7 +59,7 @@ export class ProfileComponent implements OnInit {
       )
     }
   }
-  onSelectFile(event) {
+  public onSelectFile(event):void {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
 
@@ -84,7 +84,7 @@ export class ProfileComponent implements OnInit {
   }
 
   
-  delete(){
+ public  delete():void{
     this.user.profile_pic='';
   
   }

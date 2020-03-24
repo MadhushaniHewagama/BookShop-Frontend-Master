@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "books-page.component.scss"
+    ],
+    "names": [],
+    "file": "books-page.component.css"
+}

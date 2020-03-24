@@ -43,6 +43,28 @@ export class AddBookPageComponent implements OnInit {
     )
     }
     
-    url = './assets/images/demo.jpg'
+    public onSelectFile(event):void {
+      if (event.target.files && event.target.files[0]) {
+        var reader = new FileReader();
+  
+        reader.readAsDataURL(event.target.files[0]); // read file as data url
+  
+        reader.onload = (event) => { // called once readAsDataURL is completed
+          this.book.book_pic = event.target.result;
+          //console.log("url........."+this.profile_pic);
+         
+        }
+       // console.log("pic3:::"+this.profile_pic);
+        
+      }
+    }
+  
+    
+   public  delete():void{
+      this.book.book_pic='';
+    
+    }
+    
+  }
+  
 
-}

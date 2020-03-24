@@ -40,7 +40,7 @@ export class ProfileComponent implements OnInit {
     )
     this.profileForm = new FormGroup({
       name: new FormControl(this.user.name),
-      email: new FormControl(this.user.email),
+      email: new FormControl(this.user.email,),
       address: new FormControl(this.user.address),
       tel: new FormControl(this.user.tel)    
     })   

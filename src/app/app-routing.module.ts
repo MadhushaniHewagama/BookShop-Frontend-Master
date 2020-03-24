@@ -4,7 +4,7 @@ import { SignInPageComponent } from './pages/user/sign-in-page/sign-in-page.comp
 import { SignUpPageComponent } from './pages/user/sign-up-page/sign-up-page.component';
 import {ProfileComponent} from './pages/user/profile/profile.component'
 import { AddBookPageComponent } from './pages/admin/add-book-page/add-book-page.component';
-
+import { ViewBookPageComponent } from './pages/user/view-book-page/view-book-page.component'
 const routes: Routes = [
   {
     path:'',
@@ -26,8 +26,11 @@ const routes: Routes = [
   {
     path:'addBook',
     component:AddBookPageComponent
+  },
+  {
+    path:'viewBook',
+    component:ViewBookPageComponent
   }
-
 ];
 
 @NgModule({

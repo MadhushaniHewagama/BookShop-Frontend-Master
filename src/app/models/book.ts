@@ -1,4 +1,5 @@
 export class Book{
+    public bookID:number;
     public title: string;
     public ISBN: string;
     public author: string;

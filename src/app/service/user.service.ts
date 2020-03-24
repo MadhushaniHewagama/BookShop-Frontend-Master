@@ -52,7 +52,13 @@ export class UserService {
     return this.httpClient.put(url, params);
 
   }
-
+  public getBook(bookID:any):Observable<any>{
+    let params=new HttpParams();
+    params=params.set('bookID',bookID);
+    const url =`${API_URL}/user/book`;
+    console.log("BookID::::"+bookID)
+    return this.httpClient.get(url,{params:params});
+  }
 
 }
 

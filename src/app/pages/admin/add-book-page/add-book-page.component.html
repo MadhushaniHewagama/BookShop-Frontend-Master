@@ -1,64 +1,120 @@
-<div class="container-fluid" id="main">
-  <div class="row">
-    <div class="col-2"></div>
-    <div class="col-9" id="">
-      <div class="container" id="txtTopic">
-        <h5 style="text-align: center;">Add Book</h5>
-        <div class="row">
-          <div class="col-3">
-            <div class="image-container">
-              <img [src]="book.book_pic ? book.book_pic : 'https://www.w3schools.com/howto/img_avatar.png'">
-              <br />
-            
-              <input id="fileInput" type='file' (change)="onSelectFile($event)"  >
-      
-              <button *ngIf="book.book_pic" (click)="delete()">delete</button>
-      
-          </div>
-          </div>
-          <div class="col-8">
-            <form [formGroup]= "addBookForm">
-              <div class="form-group">
-                <label>Book Title</label>
-                <input type="text" class="form-control" id="inputTitle" formControlName="title" [(ngModel)]="book.title">
-              </div>
-              <div class="form-group">
-                <label>ISBN</label>
-                <input type="text" class="form-control" id="inputISBN" formControlName="ISBN" [(ngModel)]="book.ISBN">
-              </div>
-              <div class="form-group">
-                <label>Author</label>
-                <input type="text" class="form-control" id="inputAuthor" formControlName="author" [(ngModel)]="book.author">
-              </div>
-              <div class="form-group">
-                <label>Buying Price</label>
-                <input type="number" class="form-control" id="inputBuyingPrice" formControlName="buying_price" [(ngModel)]="book.buying_price">
-              </div>
-              <div class="form-group">
-              <label>Selling Price</label>
-              <input type="number" class="form-control" id="inputSelingPrice" formControlName="selling_price" [(ngModel)]="book.selling_price">
-          </div>
-          <div class="form-group">
-          <label>Quantity</label>
-          <input type="number" class="form-control" id="inputQuantity" formControlName="quantity" [(ngModel)]="book.quantity">
+<body>
+  <div class="container-fluid" id="main">
+
+    <div class="row">
+      <div class="col-12">
+        <div class="container" id="txtTopic">
+          <h1 style="text-align: center;">Add book</h1>
         </div>
-        <div class="form-group">
-          <label>Category</label>
-          <input type="text" class="form-control" id="inputCategory" formControlName="category" [(ngModel)]="book.category">
-        </div>
-        <div class="form-group">
-          <label>Discount</label>
-          <input type="number" class="form-control" id="inputDiscount" formControlName="discount" [(ngModel)]="book.discount">
-        </div>
-        <div class="form-group">
-          <label>Description</label>
-          <input type="text" class="form-control" id="inputDescription" formControlName="description" [(ngModel)]="book.description">
-        </div>
-        <button type="submit" class="btn btn-outline-success" style="float: right;" (click)="add_book()">Add Book</button>
-        </form>
       </div>
     </div>
+
+
+    <div class="row">
+      <!-- <form class="secondContainer" id="signInButton"> -->
+      <div class="col-3" id="imageSection">
+
+        <div class="image">
+          <img [src]="book.book_pic ? book.book_pic : 'https://www.w3schools.com/howto/img_avatar.png'" class="img-thumbnail"  >
+        </div>
+        
+        <input id="fileInput" type='file' (change)="onSelectFile($event)"  >
+      
+        <button *ngIf="book.book_pic" (click)="delete()">delete</button>
+
+      </div>
+
+
+      <div class="col-7">
+        <form [formGroup]="addBookForm">
+          <div class="form-group">
+            <label>Book Title:</label>
+            <input type="text" class="form-control" id="inputTitle" formControlName="title" [(ngModel)]="book.title">
+          </div>
+          <div class="form-group">
+            <label>ISBN:</label>
+            <input type="text" class="form-control" id="inputISBN" formControlName="ISBN" [(ngModel)]="book.ISBN">
+          </div>
+          <div class="form-group">
+            <label>Author:</label>
+            <input type="text" class="form-control" id="inputAuthor" formControlName="author" [(ngModel)]="book.author">
+          </div>
+
+
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label>Buying Price:</label>
+                <input type="number" class="form-control" id="inputBuyingPrice" formControlName="buying_price"
+                  [(ngModel)]="book.buying_price">
+              </div>
+
+            </div>
+
+
+            <div class="col-6">
+              <div class="form-group">
+                <label>Selling Price:</label>
+                <input type="number" class="form-control" id="inputSelingPrice" formControlName="selling_price"
+                  [(ngModel)]="book.selling_price">
+              </div>
+            </div>
+
+         </div>
+
+
+          
+          <div class="form-group">
+            <label>Quantity:</label>
+            <input type="number" class="form-control" id="inputQuantity" formControlName="quantity"
+              [(ngModel)]="book.quantity">
+          </div>
+          <div class="form-group">
+            <label>Category:</label>
+            <input type="text" class="form-control" id="inputCategory" formControlName="category"
+              [(ngModel)]="book.category">
+          </div>
+          <div class="form-group">
+            <label>Discount:</label>
+            <input type="number" class="form-control" id="inputDiscount" formControlName="discount"
+              [(ngModel)]="book.discount">
+          </div>
+          <div class="form-group">
+            <label>Description:</label>
+            <input type="text" class="form-control"  id="inputDescription" formControlName="description"
+              [(ngModel)]="book.description">
+
+          </div>
+
+
+        </form>
+      </div>
+      <div class="col-2" >
+        <form class="secondContainer" id="Button">
+        <a href="#" class="btn btn-outline-success" id="button" (click)="add_book()">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          ADD BOOK
+        </a>
+        </form>
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
   </div>
-</div>
-</div>
-</div>
+
+
+
+
+</body>

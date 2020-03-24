@@ -6,13 +6,15 @@
         <h5 style="text-align: center;">Add Book</h5>
         <div class="row">
           <div class="col-3">
-            <div class="image">
-              <img [src]="url" height="200px" width="255px" style="margin-top: 50px;" />
-            </div>
-            <div class="formInput">
-              <input type="file" class="custom-file-input" />
-              <label class="custom-file-label" for="customFile">Choose Image</label>
-            </div>
+            <div class="image-container">
+              <img [src]="book.book_pic ? book.book_pic : 'https://www.w3schools.com/howto/img_avatar.png'">
+              <br />
+            
+              <input id="fileInput" type='file' (change)="onSelectFile($event)"  >
+      
+              <button *ngIf="book.book_pic" (click)="delete()">delete</button>
+      
+          </div>
           </div>
           <div class="col-8">
             <form [formGroup]= "addBookForm">

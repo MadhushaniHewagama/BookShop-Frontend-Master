@@ -13,16 +13,10 @@ export class ProfileComponent implements OnInit {
 
   public profileForm: FormGroup;  
   public user:User=new User();
-  // public profile_pic=null;
-  // public name:string='';
-  // public email:string='';
-  // public address:string='';
-  // public tel:number=null;
   constructor(private userService:UserService,private authService:AuthService) { }
 
   ngOnInit(): void {
     this.user.email=this.authService.getEmail();
-    //console.log("emil:::::::"+this.email);
     this.loadForm();
   }
 
@@ -30,7 +24,6 @@ export class ProfileComponent implements OnInit {
    public loadForm():void{
     this.userService.getUser().subscribe(
       res => {
-        //this.user=res[0];
         this.user.name=res[0].name;
         this.user.address=res[0].address;
         this.user.tel=res[0].tel;
@@ -68,6 +61,7 @@ export class ProfileComponent implements OnInit {
       reader.onload = (event) => { // called once readAsDataURL is completed
         this.user.profile_pic = event.target.result;
         //console.log("url........."+this.profile_pic);
+        
         this.userService.updateProfilePic(this.user.profile_pic).subscribe(
           res => { 
             // this.router.navigate(['sign-in']);

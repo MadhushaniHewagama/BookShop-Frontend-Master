@@ -14,40 +14,30 @@
             <!-- <i class="fas fa-user-plus"></i> -->
         </div>
 
-        <form class="container" id="signInForm">
+        <form [formGroup]= "signInForm" class="container" id="signInForm">
 
-            <div class="form-group row">
+            <div  class="form-group row">
                 <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="Email" placeholder="Email" />
+                    <input type="text" class="form-control" id="Email" placeholder="Email" formControlName="email"  [(ngModel)]="email" />
                 </div>
+              
             </div>
 
             <div class="form-group row"  >
                 <label for="inputPassword" class="col-sm-2 col-form-label" >Password</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="password"  placeholder="Password" />
+                    <input type="password" class="form-control" id="password"  placeholder="Password" formControlName="pwd"  [(ngModel)]="pwd" />
                 </div>
+               
             </div>
-
-<!--             
-        <div class="form-group row">
-            <div class="col-sm-10">
-                <button type="submit" class="btn btn-outline-success" id="submitBtn"
-                    style="justify-content: center; display: flex;">
-                    Sign In
-                </button>
-            </div>
-        </div> -->
-         
 
         </form>
 
         
         <form class="secondContainer" id="signInButton">
-            <a href="#"
-            class="btn btn-outline-success" id="button" (click)='signIn()'>
-            <span></span>
+            <a class="btn btn-outline-success" id="button" (click)='signIn()'>
+            <span></span> 
             <span></span>
             <span></span>
             <span></span>
@@ -55,7 +45,8 @@
         </a>
         </form>
 
-
+<div *ngIf="errorEmail"  class="col-sm-10">Please enter correct Email</div>
+<div *ngIf="errorPwd"  class="col-sm-10">Please enter correct pwd</div>
         
     </section>
 </body>

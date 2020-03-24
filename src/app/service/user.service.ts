@@ -17,6 +17,15 @@ export class UserService {
     const url =`${API_URL}/test`;
     return this.httpClient.get(url);
   }
+
+  //login
+  public login(email:string):Observable<any>{
+    let params=new HttpParams();
+    params=params.set('email',email);
+    const url =`${API_URL}/user/login`;
+    return this.httpClient.get(url,{params:params});
+  }
+
   //add user
   public addUser(user:User): Observable<any>{
     const url = `${API_URL}/user`;
@@ -33,7 +42,7 @@ export class UserService {
   }
 //update user
   public updateUser(user:User):Observable<any>{
-    const url = `${API_URL}/user`;
+   const url = `${API_URL}/user`;
     const params = {
       email:  this.authService.getEmail(),
       name: user.name,
@@ -41,15 +50,11 @@ export class UserService {
       tel:user.tel
     };
     return this.httpClient.put(url,params);
-  }
+      }
   public updateProfilePic(profile_Pic:any){
-    const params = {
-      email: this.authService.getEmail(),
-      profile_Pic: profile_Pic
-    };
-    console.log("pic2>>>>>"+profile_Pic)
-    const url = `${API_URL}/user/profile_pic`;
-    return this.httpClient.put(url, params);
+       const url = `${API_URL}/user/${this.authService.getEmail()}/profile`;
+    return this.httpClient.put(url, { profile_pic: profile_Pic });
+
 
   }
   public getBook(bookID:any):Observable<any>{

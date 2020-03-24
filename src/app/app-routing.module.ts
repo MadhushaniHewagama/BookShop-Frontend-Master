@@ -33,7 +33,8 @@ const routes: Routes = [
   {
     path:'viewBook',
     component:ViewBookPageComponent
-  }
+  },
+  {
     path: 'userHome',
     component: UserHomePageComponent
   },

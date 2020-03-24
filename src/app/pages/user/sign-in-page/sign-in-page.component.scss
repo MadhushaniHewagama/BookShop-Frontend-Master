@@ -5,11 +5,10 @@ body{
     background-size: cover;
     height: 940px;
     width: 1490px;
-	margin:0;
+  	margin:0;
     padding: 0;
     background-image: url('../../../../assets/images/image.jpg');
     font-family: sans-serif;
-
     overflow: hidden;
 }
 
@@ -21,12 +20,6 @@ body{
 }
 
 
-
-
-#button{
-    border:1px solid #ffffff;
-    border-radius: 20px;
-}
 
 
 
@@ -48,6 +41,12 @@ body{
     padding-right: 10px;
     margin: 10px;
    
+}
+
+
+#button{
+  border:1px solid #ffffff;
+  border-radius: 20px;
 }
 
 

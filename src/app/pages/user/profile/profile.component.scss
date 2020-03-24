@@ -45,18 +45,7 @@ p {
     height: 100%;
     cursor: pointer;
   }
+  input[type=file]{ 
+    color:transparent;
+}
   
-  .message {
-    position: absolute;
-    width: 90%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 100%);
-    transition: all 1s;
-    opacity: 0;
-  }
-  
-  .image-container:hover .message {
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }

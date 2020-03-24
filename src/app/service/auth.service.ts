@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private email:string='a@t.com';
+  public user:User;
   constructor() { }
 
   public getEmail(){

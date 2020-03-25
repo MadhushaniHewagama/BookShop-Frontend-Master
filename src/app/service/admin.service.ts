@@ -20,4 +20,8 @@ export class AdminService {
     const url = `${API_URL}/admin/book`
     return this.httpClient.post(url, book);
   }
+  // public deleteBook(bookID:any):Observable<any> {
+  //   const url = `${API_URL}/admin/book`
+  //   return this.httpClient.delete(url, bookID);
+  // }
 }

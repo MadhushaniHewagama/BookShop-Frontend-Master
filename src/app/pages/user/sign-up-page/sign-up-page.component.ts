@@ -13,7 +13,7 @@ export class SignUpPageComponent implements OnInit {
   public signUpForm: FormGroup;
   public user: User = new User();
   public rePwd: string;
-
+public error:boolean=false;
   constructor(private userService: UserService) {
 
 
@@ -26,16 +26,18 @@ export class SignUpPageComponent implements OnInit {
 
   public createForm(): void {
     this.signUpForm = new FormGroup({
-      name: new FormControl(this.user.name),
-      pwd: new FormControl(this.user.pwd),
-      email: new FormControl(this.user.email),
-      repwd: new FormControl(this.rePwd)
+      name: new FormControl(this.user.name,[Validators.required]),
+      pwd: new FormControl(this.user.pwd,[Validators.required]),
+      email: new FormControl(this.user.email,[Validators.required,Validators.email]),
+      repwd: new FormControl(this.rePwd,[Validators.required])
     });
 
   }
 
   public register(): void {
-    this.userService.addUser(this.user).subscribe(
+    if(this.signUpForm.valid && (this.user.pwd==this.rePwd)){
+    this.error=false;
+      this.userService.addUser(this.user).subscribe(
       res => {
         console.log(res);
       },
@@ -43,6 +45,9 @@ export class SignUpPageComponent implements OnInit {
 
 
     )
+    }else{
+      this.error=true;
+    }
   }
 
 

@@ -52,6 +52,8 @@ export class UserService {
     return this.httpClient.put(url, params);
 
   }
+
+  //get book for user view
   public getBook(bookID:any):Observable<any>{
     let params=new HttpParams();
     params=params.set('bookID',bookID);

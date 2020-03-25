@@ -5,6 +5,9 @@ import { SignUpPageComponent } from './pages/user/sign-up-page/sign-up-page.comp
 import {ProfileComponent} from './pages/user/profile/profile.component'
 import { AddBookPageComponent } from './pages/admin/add-book-page/add-book-page.component';
 import { ViewBookPageComponent } from './pages/user/view-book-page/view-book-page.component'
+import { AdminHomePageComponent } from './pages/admin/admin-home-page/admin-home-page.component';
+import { UserHomePageComponent } from './pages/user/user-home-page/user-home-page.component';
+import { EditBookPageComponent } from './pages/admin/edit-book-page/edit-book-page.component';
 const routes: Routes = [
   {
     path:'',
@@ -30,7 +33,21 @@ const routes: Routes = [
   {
     path:'viewBook',
     component:ViewBookPageComponent
+  
+  },
+  {
+    path: 'userHome',
+    component: UserHomePageComponent
+  },
+  {
+    path:'adminHome',
+    component: AdminHomePageComponent
+  },
+  {
+    path:'adminViewBook',
+    component:EditBookPageComponent 
   }
+
 ];
 
 @NgModule({

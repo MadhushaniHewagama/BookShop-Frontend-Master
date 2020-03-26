@@ -15,7 +15,7 @@ export class ViewBookPageComponent implements OnInit {
   public book:Book=new Book();
   public addToCartForm:FormGroup;
   public quantity:number=1;
-public test:string='1';
+  public test:string='1';
   ngOnInit(): void {
     this.book.bookID=1;
     this.loadBookData();

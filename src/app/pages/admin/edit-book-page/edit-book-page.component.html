@@ -1,1 +1,63 @@
-<p>edit-book-page works!</p>
+<div class="container" id="outline">
+    <div class="row">
+        <div class="col-3">
+            <div class="image-container">
+                <label class="hoverable" for="fileInput">
+                <img [src]="book.book_pic ? book.book_pic : 'https://www.w3schools.com/howto/img_avatar.png'"> 
+                <div class="background"></div>
+            </label>
+            <br/>
+            <input id="fileInput" type='file' (change)="onSelectFile($event)">    
+           </div>
+        </div>
+        <div class="col-9">
+            <div class="form-class">
+                <form [formGroup]="bookForm" class="container" id="bookForm">
+                    
+                    <div class="form-group">
+                        <label>Book Title</label>
+                        <input type="text" class="form-control" id="bookID" formControlName="title" [(ngModel)]="book.title">
+                      </div>
+                      <div class="form-group">
+                        <label>ISBN</label>
+                        <input type="text" class="form-control" id="ISBN" formControlName="ISBN" [(ngModel)]="book.ISBN">
+                      </div>
+                      <div class="form-group">
+                        <label>Author</label>
+                        <input type="text" class="form-control" id="Author" formControlName="author" [(ngModel)]="book.author">
+                      </div>
+                      <div class="form-group">
+                        <label>Buying Price</label>
+                        <input type="number" class="form-control" id="BuyingPrice" formControlName="buying_price" [(ngModel)]="book.buying_price">
+                      </div>
+                      <div class="form-group">
+                      <label>Selling Price</label>
+                      <input type="number" class="form-control" id="SelingPrice" formControlName="selling_price" [(ngModel)]="book.selling_price">
+                  </div>
+                  <div class="form-group">
+                  <label>Quantity</label>
+                  <input type="number" class="form-control" id="Quantity" formControlName="quantity" [(ngModel)]="book.quantity">
+                </div>
+                <div class="form-group">
+                  <label>Category</label>
+                  <input type="text" class="form-control" id="Category" formControlName="category" [(ngModel)]="book.category">
+                </div>
+                <div class="form-group">
+                  <label>Discount</label>
+                  <input type="number" class="form-control" id="Discount" formControlName="discount" [(ngModel)]="book.discount">
+                </div>
+                <div class="form-group">
+                  <label>Description</label>
+                  <input type="text" class="form-control" id="Description" formControlName="description" [(ngModel)]="book.description">
+                </div>
+                </form>
+                <div class="update_btn">
+                    <button class="btn btn-outline-success" (click)="updateBook()" color="success" >Update Book</button>
+                </div>
+                <div class="update_btn">
+                    <button class="btn btn-outline-success" (click)="deletBook()" color="danger">Delete Book</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -7,7 +7,7 @@ import { AddBookPageComponent } from './pages/admin/add-book-page/add-book-page.
 import { ViewBookPageComponent } from './pages/user/view-book-page/view-book-page.component'
 import { AdminHomePageComponent } from './pages/admin/admin-home-page/admin-home-page.component';
 import { UserHomePageComponent } from './pages/user/user-home-page/user-home-page.component';
-
+import { EditBookPageComponent } from './pages/admin/edit-book-page/edit-book-page.component';
 const routes: Routes = [
   {
     path:'',
@@ -33,6 +33,7 @@ const routes: Routes = [
   {
     path:'viewBook',
     component:ViewBookPageComponent
+  
   },
   {
     path: 'userHome',
@@ -41,8 +42,11 @@ const routes: Routes = [
   {
     path:'adminHome',
     component: AdminHomePageComponent
+  },
+  {
+    path:'adminViewBook',
+    component:EditBookPageComponent 
   }
-
 
 ];
 

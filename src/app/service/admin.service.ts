@@ -31,4 +31,15 @@ export class AdminService {
     console.log("BookID::::"+bookID);
     return this.httpClient.get(url,{params:params});
   }
+  public updateBook(book:Book):Observable<any>{
+    const url = `${API_URL}/admin/book`;
+    return this.httpClient.put(url,book);
+  }
+  public deleteBook(bookID:any):Observable<any>{
+    let params = new HttpParams();
+    params=params.set('bookID',bookID);
+    const url = `${API_URL}/admin/book`;
+console.log("jhanjaadfa"+bookID)
+    return this.httpClient.delete(url,{params:params});
+  }
 }

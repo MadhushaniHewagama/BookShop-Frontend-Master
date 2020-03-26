@@ -36,7 +36,7 @@ export class EditBookPageComponent implements OnInit {
         this.book.buying_price = res[0].buying_price;
         this.book.category = res[0].category;
         this.book.description = res[0].description;
-        this.book.discount = res[0].description;
+        this.book.discount = res[0].discount;
         this.book.quantity = res[0].quantity;
         this.book.title = res[0].title;
         this.book.selling_price = res[0].selling_price;
@@ -61,7 +61,45 @@ export class EditBookPageComponent implements OnInit {
       selling_price:  new FormControl(this.book.selling_price)
 
     });
+  }
+  public updateBook():void{
+    console.log(this.bookForm.valid)
+    if(this.bookForm.valid){     
+      this.adminService.updateBook(this.book).subscribe(
+        res => { 
+          // this.router.navigate(['sign-in']);
+           console.log(res); 
+        },
+        err => { console.log(err); }
 
+      )
+    }
+  }
+ 
+  public onSelectFile(event):void {
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (event) => { // called once readAsDataURL is completed
+        this.book.book_pic = event.target.result;       
+      }
+     // console.log("pic3:::"+this.profile_pic);
+      
+    }
   }
 
+  
+ public  deletBook():void{
+  this.adminService.deleteBook(this.book.bookID).subscribe(
+    res => { 
+      // this.router.navigate(['sign-in']);
+       console.log(res); 
+    },
+    err => { console.log(err); }
+
+  )
+  }
+  
 }

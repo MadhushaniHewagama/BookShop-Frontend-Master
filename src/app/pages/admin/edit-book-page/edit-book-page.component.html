@@ -1,4 +1,4 @@
-<div class="container" id="main">
+<div class="container" id="outline">
     <div class="row">
         <div class="col-3">
             <div class="image-container">
@@ -7,14 +7,12 @@
                 <div class="background"></div>
             </label>
             <br/>
-            <!-- <input id="fileInput" type='file' (change)="onSelectFile($event)">
-<button *ngIf="book.book_pic" (click)="delete()" >delete</button>
-             -->
+            <input id="fileInput" type='file' (change)="onSelectFile($event)">    
            </div>
         </div>
         <div class="col-9">
             <div class="form-class">
-                <form [formGroup]="bookForm">
+                <form [formGroup]="bookForm" class="container" id="bookForm">
                     
                     <div class="form-group">
                         <label>Book Title</label>
@@ -54,7 +52,10 @@
                 </div>
                 </form>
                 <div class="update_btn">
-                    <button class="btn btn-outline-success">Update Book Details</button>
+                    <button class="btn btn-outline-success" (click)="updateBook()" color="success" >Update Book</button>
+                </div>
+                <div class="update_btn">
+                    <button class="btn btn-outline-success" (click)="deletBook()" color="danger">Delete Book</button>
                 </div>
             </div>
         </div>

@@ -24,8 +24,8 @@ export class SignInPageComponent implements OnInit {
   }
   public createForm(): void {
     this.signInForm = new FormGroup({
-      email: new FormControl('', Validators.required),
-      pwd: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required,Validators.email]),
+      pwd: new FormControl('', [Validators.required]),
     });
 
   }
@@ -35,8 +35,10 @@ export class SignInPageComponent implements OnInit {
       this.userService.login(this.email).subscribe(
         res => {
           if (res[0]) {
+            this.errorEmail = false;
             let c_pwd = res[0].pwd;
             if (c_pwd == this.pwd) {
+              this.errorPwd = false;
               this.authService.setEmail(this.email);
               this.authService.user = res;
               if (res[0].privilege == '0') {

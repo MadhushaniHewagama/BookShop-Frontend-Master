@@ -30,6 +30,10 @@
           <div class="form-group">
             <label>Book Title:</label>
             <input type="text" class="form-control" id="inputTitle" formControlName="title" [(ngModel)]="book.title">
+            <div class="error-message"
+            *ngIf="addBookForm.controls.title.errors && (addBookForm.controls.title.dirty||addBookForm.controls.title.touched)">
+            <p class="error-msg" *ngIf="addBookForm.controls.title.errors.required" style="color:red">Book title required</p>                
+          </div>
           </div>
           <div class="form-group">
             <label>ISBN:</label>
@@ -47,6 +51,10 @@
                 <label>Buying Price:</label>
                 <input type="number" class="form-control" id="inputBuyingPrice" formControlName="buying_price"
                   [(ngModel)]="book.buying_price">
+                  <div class="error-message"
+                  *ngIf="addBookForm.controls.buying_price.errors && (addBookForm.controls.buying_price.dirty||addBookForm.controls.buying_price.touched)">
+                  <p class="error-msg" *ngIf="addBookForm.controls.buying_price.errors.required" style="color:red">Buying price is required</p>                
+                </div>
               </div>
 
             </div>
@@ -57,6 +65,10 @@
                 <label>Selling Price:</label>
                 <input type="number" class="form-control" id="inputSelingPrice" formControlName="selling_price"
                   [(ngModel)]="book.selling_price">
+                  <div class="error-message"
+                  *ngIf="addBookForm.controls.selling_price.errors && (addBookForm.controls.selling_price.dirty||addBookForm.controls.selling_price.touched)">
+                  <p class="error-msg" *ngIf="addBookForm.controls.selling_price.errors.required" style="color:red">Selling price is required</p>                
+                </div>
               </div>
             </div>
 
@@ -68,6 +80,10 @@
             <label>Quantity:</label>
             <input type="number" class="form-control" id="inputQuantity" formControlName="quantity"
               [(ngModel)]="book.quantity">
+              <div class="error-message"
+              *ngIf="addBookForm.controls.quantity.errors && (addBookForm.controls.quantity.dirty||addBookForm.controls.quantity.touched)">
+              <p class="error-msg" *ngIf="addBookForm.controls.quantity.errors.required" style="color:red">Book quantity is required</p>                
+            </div>
           </div>
           <div class="form-group">
             <label>Category:</label>
@@ -118,3 +134,4 @@
 
 
 </body>
+<app-footer></app-footer>

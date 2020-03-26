@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book';
 import { AdminService } from 'src/app/service/admin.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-book-page',
@@ -22,12 +22,12 @@ export class AddBookPageComponent implements OnInit {
 
   public createForm(){
     this.addBookForm = new FormGroup({
-             title: new FormControl(this.book.title),
+             title: new FormControl(this.book.title,[Validators.required]),
              ISBN: new FormControl(this.book.ISBN),
              author: new FormControl(this.book.author),
-             buying_price: new FormControl(this.book.buying_price),
-             selling_price: new FormControl(this.book.selling_price),
-             quantity: new FormControl(this.book.quantity),
+             buying_price: new FormControl(this.book.buying_price,[Validators.required]),
+             selling_price: new FormControl(this.book.selling_price,[Validators.required]),
+             quantity: new FormControl(this.book.quantity,[Validators.required]),
              category: new FormControl(this.book.category),
              discount: new FormControl(this.book.discount),
              description: new FormControl(this.book.description)
@@ -62,6 +62,12 @@ export class AddBookPageComponent implements OnInit {
     
    public  delete():void{
       this.book.book_pic='';
+      // this.adminService.deleteBook(this.book.bookID).subscribe(
+      //   res => {
+      //     console.log(res)
+      //   }, 
+      //   err => { console.log(err) }
+      // )
     
     }
     

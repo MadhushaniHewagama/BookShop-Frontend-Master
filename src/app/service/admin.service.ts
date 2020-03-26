@@ -39,7 +39,6 @@ export class AdminService {
     let params = new HttpParams();
     params=params.set('bookID',bookID);
     const url = `${API_URL}/admin/book`;
-console.log("jhanjaadfa"+bookID)
     return this.httpClient.delete(url,{params:params});
   }
 }

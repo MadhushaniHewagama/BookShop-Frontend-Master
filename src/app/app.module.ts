@@ -20,6 +20,8 @@ import { ViewUsersPageComponent } from 'src/app/pages/admin/view-users-page/view
 import { ViewUserPageComponent } from 'src/app/pages/admin/view-user-page/view-user-page.component';
 import { ProfileComponent } from 'src/app/pages/user/profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { HttpClientModule } from '@angular/common/http';
     ViewOrdersPageComponent,
     ViewUsersPageComponent,
     ViewUserPageComponent,
-    ProfileComponent
+    ProfileComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -24,6 +24,8 @@ import { ViewPaymentPageComponent } from './pages/user/view-payment-page/view-pa
 import { ViewOrderPageComponent } from './pages/user/view-order-page/view-order-page.component';
 import { CommonModule } from "@angular/common";
 import { HomeComponent } from './pages/home/home.component';
+import { AdminDashBoardComponent } from './pages/admin/admin-dash-board/admin-dash-board.component';
+import { UserDashBoardComponent } from './pages/user/user-dash-board/user-dash-board.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +47,9 @@ import { HomeComponent } from './pages/home/home.component';
     FooterComponent,
     ViewPaymentPageComponent,
     ViewOrderPageComponent,
-    HomeComponent
+    HomeComponent,
+    AdminDashBoardComponent,
+    UserDashBoardComponent
   ],
   imports: [
     BrowserModule,

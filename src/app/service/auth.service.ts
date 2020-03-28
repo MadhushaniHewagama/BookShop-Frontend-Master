@@ -5,7 +5,7 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class AuthService {
-  private email:string='a@t.com';
+  private email:string='user@gmail.com';
   public user:User;
   constructor() { }
 

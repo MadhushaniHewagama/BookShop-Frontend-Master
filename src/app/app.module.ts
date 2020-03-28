@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInPageComponent } from 'src/app/pages/user/sign-in-page/sign-in-page.component';
@@ -11,7 +10,6 @@ import { ViewBookPageComponent } from 'src/app/pages/user/view-book-page/view-bo
 import { BooksPageComponent } from 'src/app/pages/user/books-page/books-page.component';
 import { CartPageComponent } from 'src/app/pages/user/cart-page/cart-page.component';
 import { OrderPageComponent } from 'src/app/pages/user/order-page/order-page.component';
-import { ViewOrderPageComponent } from 'src/app/pages/admin/view-order-page/view-order-page.component';
 import { AdminHomePageComponent } from 'src/app/pages/admin/admin-home-page/admin-home-page.component';
 import { AddBookPageComponent } from 'src/app/pages/admin/add-book-page/add-book-page.component';
 import { EditBookPageComponent } from 'src/app/pages/admin/edit-book-page/edit-book-page.component';
@@ -22,7 +20,9 @@ import { ProfileComponent } from 'src/app/pages/user/profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-
+import { ViewPaymentPageComponent } from './pages/user/view-payment-page/view-payment-page.component';
+import { ViewOrderPageComponent } from './pages/user/view-order-page/view-order-page.component';
+import { CommonModule } from "@angular/common";
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +33,6 @@ import { FooterComponent } from './components/footer/footer.component';
     BooksPageComponent,
     CartPageComponent,
     OrderPageComponent,
-    ViewOrderPageComponent,
     AdminHomePageComponent,
     AddBookPageComponent,
     EditBookPageComponent,
@@ -42,7 +41,9 @@ import { FooterComponent } from './components/footer/footer.component';
     ViewUserPageComponent,
     ProfileComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ViewPaymentPageComponent,
+    ViewOrderPageComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +51,7 @@ import { FooterComponent } from './components/footer/footer.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    CommonModule
   ],
   providers: [
     HttpClientModule

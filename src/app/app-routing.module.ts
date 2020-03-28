@@ -8,6 +8,10 @@ import { ViewBookPageComponent } from './pages/user/view-book-page/view-book-pag
 import { AdminHomePageComponent } from './pages/admin/admin-home-page/admin-home-page.component';
 import { UserHomePageComponent } from './pages/user/user-home-page/user-home-page.component';
 import { EditBookPageComponent } from './pages/admin/edit-book-page/edit-book-page.component';
+import { ViewUserPageComponent } from './pages/admin/view-user-page/view-user-page.component';
+import { ViewOrderPageComponent } from './pages/user/view-order-page/view-order-page.component';
+import { ViewPaymentPageComponent } from './pages/user/view-payment-page/view-payment-page.component';
+
 const routes: Routes = [
   {
     path:'',
@@ -23,29 +27,41 @@ const routes: Routes = [
     component:SignUpPageComponent
   },
   {
-    path:'profile',
+    path:'user/profile',
     component:ProfileComponent
   },
   {
-    path:'addBook',
+    path:'admin/addBook',
     component:AddBookPageComponent
   },
   {
-    path:'viewBook',
+    path:'user/viewBook',
     component:ViewBookPageComponent
   
   },
   {
-    path: 'userHome',
+    path: 'user/home',
     component: UserHomePageComponent
   },
   {
-    path:'adminHome',
+    path: 'user/viewOrder',
+    component: ViewOrderPageComponent
+  },
+  {
+    path: 'user/viewPayment',
+    component: ViewPaymentPageComponent
+  },
+  {
+    path:'admin/home',
     component: AdminHomePageComponent
   },
   {
-    path:'adminViewBook',
+    path:'admin/viewBook',
     component:EditBookPageComponent 
+  },
+   {
+    path:'admin/viewUser',
+    component:ViewUserPageComponent
   }
 
 ];

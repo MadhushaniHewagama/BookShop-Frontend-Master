@@ -1,1 +1,24 @@
-<p>view-order-page works!</p>
+<body>
+    <div class="container-fluid" id="main">
+        <table class="table table-sm table-dark">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Quentity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Date Time</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of pastOrders;let i =index">
+                <tr>
+                    <td>{{i+1}}</td>
+                    <td>{{item.title}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.selling_price}}</td>
+                    <td>{{item.date_time}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>

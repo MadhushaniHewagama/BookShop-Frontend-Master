@@ -67,6 +67,22 @@ export class UserService {
     return this.httpClient.get(url,{params:params});
   }
 
+  public getOrders(email:string):Observable<any>{
+    // let params = new HttpParams();
+    // params=params.set('email',email);
+    const url =`${API_URL}/user/order/`+`${email}`;
+    console.log("email::::"+email);
+    return this.httpClient.get(url);
+  }
+
+  public getPayments(email:string):Observable<any>{
+    // let params = new HttpParams();
+    // params=params.set('email',email);
+    const url =`${API_URL}/user/payment/`+`${email}`;
+    console.log("email::::"+email);
+    return this.httpClient.get(url);
+  }
+
 }
 
 

@@ -5,6 +5,7 @@ import { Book } from '../models/book';
 import { API_URL } from '../config/constants';
 import { Observable } from 'rxjs';
 import{ HttpParams } from '@angular/common/http';
+import { Options } from 'selenium-webdriver/chrome';
 
 
 @Injectable({
@@ -40,5 +41,12 @@ export class AdminService {
     params=params.set('bookID',bookID);
     const url = `${API_URL}/admin/book`;
     return this.httpClient.delete(url,{params:params});
+  }
+  public getUser(email:string):Observable<any>{
+    // let params = new HttpParams();
+    // params=params.set('email',email);
+    const url =`${API_URL}/admin/user/`+`${email}`;
+    console.log("email::::"+email);
+    return this.httpClient.get(url);
   }
 }

@@ -2,7 +2,7 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SignInPageComponent } from './pages/user/sign-in-page/sign-in-page.component';
 import { SignUpPageComponent } from './pages/user/sign-up-page/sign-up-page.component';
-import {ProfileComponent} from './pages/user/profile/profile.component'
+import { ProfileComponent } from './pages/user/profile/profile.component'
 import { AddBookPageComponent } from './pages/admin/add-book-page/add-book-page.component';
 import { ViewBookPageComponent } from './pages/user/view-book-page/view-book-page.component'
 import { AdminHomePageComponent } from './pages/admin/admin-home-page/admin-home-page.component';
@@ -11,37 +11,44 @@ import { EditBookPageComponent } from './pages/admin/edit-book-page/edit-book-pa
 import { ViewUserPageComponent } from './pages/admin/view-user-page/view-user-page.component';
 import { ViewOrderPageComponent } from './pages/user/view-order-page/view-order-page.component';
 import { ViewPaymentPageComponent } from './pages/user/view-payment-page/view-payment-page.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CartPageComponent } from './pages/user/cart-page/cart-page.component';
+import { ViewUsersPageComponent } from './pages/admin/view-users-page/view-users-page.component';
 
 const routes: Routes = [
   {
-    path:'',
-    redirectTo:'signIn',
+    path: '',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
-    path:'signIn',
-    component:SignInPageComponent
+    path: 'home',
+    component: HomeComponent
   },
   {
-    path:'signUp',
-    component:SignUpPageComponent
+    path: 'signIn',
+    component: SignInPageComponent
   },
   {
-    path:'user/profile',
-    component:ProfileComponent
-  },
-  {
-    path:'admin/addBook',
-    component:AddBookPageComponent
-  },
-  {
-    path:'user/viewBook',
-    component:ViewBookPageComponent
-  
+    path: 'signUp',
+    component: SignUpPageComponent
   },
   {
     path: 'user/home',
     component: UserHomePageComponent
+  },
+  {
+    path: 'user/profile',
+    component: ProfileComponent
+  },
+  {
+    path: 'user/viewBook',
+    component: ViewBookPageComponent
+
+  },
+  {
+    path: 'user/cart',
+    component: CartPageComponent
   },
   {
     path: 'user/viewOrder',
@@ -52,16 +59,24 @@ const routes: Routes = [
     component: ViewPaymentPageComponent
   },
   {
-    path:'admin/home',
+    path: 'admin/home',
     component: AdminHomePageComponent
   },
   {
-    path:'admin/viewBook',
-    component:EditBookPageComponent 
+    path: 'admin/addBook',
+    component: AddBookPageComponent
   },
    {
-    path:'admin/viewUser',
-    component:ViewUserPageComponent
+    path: 'admin/viewBook',
+    component: EditBookPageComponent
+  },
+  {
+    path: 'admin/viewUsers',
+    component:ViewUsersPageComponent
+  },
+  {
+    path: 'admin/viewUser',
+    component: ViewUserPageComponent
   }
 
 ];

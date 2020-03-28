@@ -23,6 +23,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ViewPaymentPageComponent } from './pages/user/view-payment-page/view-payment-page.component';
 import { ViewOrderPageComponent } from './pages/user/view-order-page/view-order-page.component';
 import { CommonModule } from "@angular/common";
+import { HomeComponent } from './pages/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { CommonModule } from "@angular/common";
     HeaderComponent,
     FooterComponent,
     ViewPaymentPageComponent,
-    ViewOrderPageComponent
+    ViewOrderPageComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

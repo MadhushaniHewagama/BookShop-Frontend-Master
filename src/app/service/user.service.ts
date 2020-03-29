@@ -83,6 +83,14 @@ export class UserService {
     return this.httpClient.get(url);
   }
 
+  public getCartList(email:string):Observable<any>{
+    // let params = new HttpParams();
+    // params=params.set('email',email);
+    const url =`${API_URL}/user/cart/`+`${email}`;
+    console.log("email::::"+email);
+    return this.httpClient.get(url);
+  }
+
 }
 
 

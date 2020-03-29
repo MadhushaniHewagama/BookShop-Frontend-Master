@@ -1,1 +1,31 @@
-<p>cart-page works!</p>
+<div class="col-sm-7">
+    <table class="table table-sm table-dark">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Date Time</th>
+                <th scope="col">Title</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of cartList;let i =index">
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{item.date_time}}</td>
+                <td>{{item.title}}</td>
+                <td>
+                    <input type="number"  value={{item.quantity}}/>
+                </td>
+                <td>{{item.selling_price}}</td>
+                <td><button type="button" class="btn btn-success" (click)="addItem(item)" >Add</button>
+                    <button type="button" class="btn btn-danger" (click)="removeItem(item)" >Remove</button>
+                   </td>
+            </tr>
+            <!-- <tr>
+             <button type="button" class="btn btn-success"(click)="addItem(item.cart_product_id)">Add</button>
+            <button type="button" class="btn btn-danger"(click)="removeItem(item.cart_product_id)">Remove</button>
+        </tr> -->
+        </tbody>
+    </table>
+</div>

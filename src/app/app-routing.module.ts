@@ -8,11 +8,16 @@ import { ViewBookPageComponent } from './pages/user/view-book-page/view-book-pag
 import { AdminHomePageComponent } from './pages/admin/admin-home-page/admin-home-page.component';
 import { UserHomePageComponent } from './pages/user/user-home-page/user-home-page.component';
 import { EditBookPageComponent } from './pages/admin/edit-book-page/edit-book-page.component';
+import { HomeComponent } from './pages/home/home.component';
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'signIn',
+    redirectTo:'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component:HomeComponent
   },
   {
     path:'signIn',

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/service/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up-page',
@@ -14,7 +15,7 @@ export class SignUpPageComponent implements OnInit {
   public user: User = new User();
   public rePwd: string;
 public error:boolean=false;
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService ,private router: Router) {
 
 
   }
@@ -37,14 +38,18 @@ public error:boolean=false;
   public register(): void {
     if(this.signUpForm.valid && (this.user.pwd==this.rePwd)){
     this.error=false;
+
       this.userService.addUser(this.user).subscribe(
       res => {
         console.log(res);
+        this.router.navigate(['user/home']);
       },
       err => { console.log(err); }
 
 
     )
+
+
     }else{
       this.error=true;
     }

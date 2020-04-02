@@ -14,6 +14,7 @@ import { ViewPaymentPageComponent } from './pages/user/view-payment-page/view-pa
 import { HomeComponent } from './pages/home/home.component';
 import { CartPageComponent } from './pages/user/cart-page/cart-page.component';
 import { ViewUsersPageComponent } from './pages/admin/view-users-page/view-users-page.component';
+import { ViewOrdersPageComponent } from './pages/admin/view-orders-page/view-orders-page.component';
 
 const routes: Routes = [
   {
@@ -77,6 +78,10 @@ const routes: Routes = [
   {
     path: 'admin/viewUser',
     component: ViewUserPageComponent
+  },
+  {
+    path:'admin/ViewOrders',
+    component:ViewOrdersPageComponent
   }
 
 ];

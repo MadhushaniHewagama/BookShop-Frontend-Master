@@ -42,9 +42,9 @@ export class SignInPageComponent implements OnInit {
               this.authService.setEmail(this.email);
               this.authService.user = res;
               if (res[0].privilege == '0') {
-                this.router.navigate(['userHome']);
+                this.router.navigate(['user/home']);
               } else {
-                this.router.navigate(['adminHome']);
+                this.router.navigate(['admin/home']);
               }
 
             } else {

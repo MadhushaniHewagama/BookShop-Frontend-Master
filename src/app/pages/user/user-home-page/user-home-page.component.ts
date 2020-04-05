@@ -76,6 +76,17 @@ export class UserHomePageComponent implements OnInit {
     this.searchBooks=this.homeService.filterBooks(this.searchTerm,this.books)
   }
   
+public addCart(book:Book):void{
+  this.router.navigate(["/user/cart"], {
+    queryParams: { bookID: book.bookID}
+  });
 
+}
+public viewBook(book:Book):void{
+  this.router.navigate(["/user/viewBook"], {
+    queryParams: { bookID: book.bookID}
+  });
+
+}
 
 }

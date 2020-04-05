@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book'
 import { AdminService } from 'src/app/service/admin.service';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-book-page',
@@ -14,19 +15,20 @@ export class EditBookPageComponent implements OnInit {
   public test:string = '1';
   public bookForm : FormGroup;
 
-  constructor(private adminService:AdminService) { }
+  constructor(private adminService:AdminService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(parms => {
+      this.book.bookID=parms.bookID;
+      this.loadForm();
+    });
+   
 
-    //initially book data load into the form
-    this.loadForm();
-
-    this.book.bookID=1;
   }
 
   public loadForm():void{
 
-    this.adminService.getBook(this.test).subscribe(
+    this.adminService.getBook(this.book.bookID).subscribe(
 
       res => {
 

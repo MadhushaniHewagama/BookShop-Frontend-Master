@@ -1,1 +1,28 @@
-<p>cart-page works!</p>
+<app-header></app-header>
+
+<body>
+
+
+    <div class="container-fluid" id="main">
+        <table class="table table-sm table-dark">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Quentity</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of cart;let i =index" >
+                <tr>
+                    <td>{{i+1}}</td>
+                    <td>{{item.title}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.selling_price}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    <app-footer></app-footer>
+</body>

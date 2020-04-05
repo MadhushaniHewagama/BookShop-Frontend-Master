@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Book } from 'src/app/models/book';
 import { HomeService } from 'src/app/service/home.service';
+import { CartItem } from 'src/app/models/cartItem';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-user-home-page',
@@ -20,7 +22,8 @@ export class UserHomePageComponent implements OnInit {
   public comics: any;
   public other: any;
   public offers: any;
-  constructor(private homeService: HomeService,private router: Router) { }
+  public  cartItem: CartItem =new CartItem();
+  constructor(private homeService: HomeService,private router: Router,private authService:AuthService) { }
 
   ngOnInit(): void {
     this.loadData()
@@ -76,11 +79,21 @@ export class UserHomePageComponent implements OnInit {
     this.searchBooks=this.homeService.filterBooks(this.searchTerm,this.books)
   }
   
-public addCart(book:Book):void{
-  this.router.navigate(["/user/cart"], {
-    queryParams: { bookID: book.bookID}
-  });
-
+public addCart(book:Book):void{  
+  this.cartItem.bookID=book.bookID;
+  this.cartItem.email=this.authService.getEmail();
+  this.homeService.addCart(this.cartItem).subscribe
+    (
+      res =>{
+        this.router.navigate(["/user/cart"]);  
+        
+      },
+      err => {
+        console.log(err)
+      }
+    )
+  
+  
 }
 public viewBook(book:Book):void{
   this.router.navigate(["/user/viewBook"], {

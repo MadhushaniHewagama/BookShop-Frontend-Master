@@ -1,1 +1,54 @@
-<p>view-orders-page works!</p>
+<body>
+
+    <div class="row">
+
+        <div class="col-12">
+            <div class="a">
+                <h1>
+                    View orders
+                </h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12">
+
+            <div class="container-fluid">
+                <table class="table table-sm table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">UserName</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Telphone</th>
+                            <th scope="col">Orders</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let item of Orders;let i =index">
+                        <tr>
+                            <td>{{i+1}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.Email}}</td>
+                            <td>{{item.Telphone}}</td>
+                            <td>{{item.Orders}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="footer">
+        <app-footer></app-footer>
+    </div>
+
+
+
+
+</body>

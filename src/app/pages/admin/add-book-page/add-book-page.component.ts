@@ -37,6 +37,7 @@ export class AddBookPageComponent implements OnInit {
   public add_book():void{
     this.adminService.addBook(this.book).subscribe(
       res => {
+        this.book=null;
         console.log(res)
       }, 
       err => { console.log(err) }

@@ -1,15 +1,19 @@
 
 
+* {box-sizing: border-box;}
+
+
 body{
     background-size: cover;
-    height: 940px;
-    width: 1490px;
-	margin:0;
-    padding: 0;
-    background-image: url('../../../../assets/images/image.jpg');
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(0deg, rgb(100, 189, 139) 0%, rgb(255, 255, 255) 100%);
     font-family: sans-serif;
     overflow: hidden;
 }
+
+
+
 #inputUsername,#inputEmail,#inputPassword,#inputRePassword{
     border:10px solid #ffffff;
     border-radius: 40px;
@@ -18,17 +22,15 @@ body{
 
 
 #signUpTxt{
-    border-radius: 20px;
-    padding-top: 200px;
-    padding-right: 175px;
-    text-align: right;
-   opacity :50%;
-    color:#ffffff;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding-top: 20px;
+  padding-left: 275px;
+  opacity :70%;
+  color :rgb(100, 189, 139);
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 #signUpButton{
     padding-top: 50px;
-    padding-left: 945px;
+    padding-left: 275px;
     padding-right: 10px;
     margin: 10px;
    
@@ -37,8 +39,8 @@ body{
 
 
 #signUpForm{
-    padding-top: 50px;
-    padding-left: 500px;
+    padding-top: 10px;
+    padding-left: 10px;
     padding-right: 10px;
     // margin: 10px;
    
@@ -136,7 +138,13 @@ color: rgb(7, 241, 230)
     transition: 1s;
     transition-delay: 0.75s;
   }
-
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    
+  }
 
   //.................................................................................................................
 

@@ -1,0 +1,27 @@
+* {box-sizing: border-box;}
+
+
+body{
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(0deg, rgb(100, 189, 139) 0%, rgb(255, 255, 255) 100%);
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+
+
+div.a {
+    text-align: center;
+    font-size: 2500px;
+    color: rgb(100, 189, 139) ;
+    font-family:'Times New Roman', Times, serif;
+  }
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    
+  }

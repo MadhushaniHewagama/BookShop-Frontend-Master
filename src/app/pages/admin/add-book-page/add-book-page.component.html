@@ -13,9 +13,9 @@
     <div class="row">
       <!-- <form class="secondContainer" id="signInButton"> -->
       <div class="col-3" id="imageSection">
-
+      
         <div class="image">
-          <img [src]="book.book_pic ? book.book_pic : 'https://www.w3schools.com/howto/img_avatar.png'" class="img-thumbnail"  >
+          <img [src]="book.book_pic ? book.book_pic : '../../../../assets/images/images.png'" class="img-thumbnail"  >
         </div>
         
         <input id="fileInput" type='file' (change)="onSelectFile($event)"  >
@@ -85,11 +85,25 @@
               <p class="error-msg" *ngIf="addBookForm.controls.quantity.errors.required" style="color:red">Book quantity is required</p>                
             </div>
           </div>
+
+
           <div class="form-group">
             <label>Category:</label>
-            <input type="text" class="form-control" id="inputCategory" formControlName="category"
-              [(ngModel)]="book.category">
+            <select name="cars" class="custom-select mb-3"  id="inputCategory"  [(ngModel)]="book.category"  >
+              <!-- <option selected>Custom Select Menu</option> -->
+              <option value="1">Educational</option>
+              <option value="2">Entertainment</option>
+              <option value="3">Health</option>
+              <option value="4">Regligion</option>
+              <option value="5">Comics</option>
+              <option value="6">Other</option>
+            </select>
+            <!-- <input type="text" class="form-control" id="inputCategory" formControlName="category"
+              [(ngModel)]="book.category"> -->
           </div>
+
+
+
           <div class="form-group">
             <label>Discount:</label>
             <input type="number" class="form-control" id="inputDiscount" formControlName="discount"

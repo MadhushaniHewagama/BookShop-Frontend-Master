@@ -1,47 +1,38 @@
-
-
-
 body{
     background-size: cover;
-    height: 940px;
-    width: 1490px;
-  	margin:0;
-    padding: 0;
-    background-image: url('../../../../assets/images/image.jpg');
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(0deg, rgb(100, 189, 139) 0%, rgb(255, 255, 255) 100%);
     font-family: sans-serif;
     overflow: hidden;
 }
 
-
-
 #password,#Email{
-     border:1px solid #ffffff;
+    border:1px solid #ffffff;
     border-radius: 40px;
 }
 
-
-
-
-
-
 #signInTxt{
-    border-radius: 20px;
-    padding-top: 300px;
-    padding-right: 110px;
-    text-align: right;
-   opacity :50%;
-    color:#ffffff;
+    padding-top: 100px;
+    padding-left: 275px;
+    opacity :70%;
+    color :rgb(100, 189, 139);
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #signInForm{
-  
-    padding-top: 50px;
-    padding-left: 600px;
-    padding-right: 10px;
-    margin: 10px;
-   
+    padding-top: 10px;
+    padding-left: 10px;
+
 }
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  
+}
+
 
 
 #button{
@@ -49,13 +40,16 @@ body{
   border-radius: 20px;
 }
 
+img{
+  padding-top: 100px;
+  margin: 10px;
+}
 
 #signInButton{
-    padding-top: 50px;
-    padding-left: 800px;
+    padding-top: 20px;
+    padding-left: 275px;
     padding-right: 10px;
     margin: 10px;
-   
 }
 // ............................................................
 

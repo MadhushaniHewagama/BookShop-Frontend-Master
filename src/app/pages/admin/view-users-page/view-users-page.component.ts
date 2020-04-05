@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/service/admin.service';
 
 @Component({
   selector: 'app-view-users-page',
@@ -6,10 +7,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-users-page.component.scss']
 })
 export class ViewUsersPageComponent implements OnInit {
-
-  constructor() { }
+  public users: any;
+  constructor(private adminService: AdminService) { }
 
   ngOnInit(): void {
+
+
+    this.loadData();
+    
+  }
+
+  public loadData(): void {
+    this.adminService.getUsers().subscribe(
+      res => {
+        this.users = res;
+              },
+      err => {
+        console.log(err)
+      }
+    )
+
   }
 
 }

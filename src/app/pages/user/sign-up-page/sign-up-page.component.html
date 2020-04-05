@@ -1,86 +1,109 @@
 <body>
-        
+
     <section class="wrapper">
         <div id="stars"></div>
         <div id="stars2"></div>
         <div id="stars3"></div>
     </section>
 
+    <div class="row">
+        <div class="col-2"></div>
+
+        <div class="col-3">
+            <img src="../../../../assets/images/Untitled-11.png" class="rounded" alt="Cinque Terre" width="400"
+                height="400">
+        </div>
+        <div class="col-6">
+
+            <div section="container" id="outline">
+                <div class="container" id="signUpTxt">
+                    <h3>W E L C O M E </h3>
+
+                </div>
 
 
-<div section="container" id="outline">
-    <div class="container" id="signUpTxt">
-        <h3>W E L C O M E </h3>
-        
+                <form [formGroup]="signUpForm" class="container" id="signUpForm">
+                    <div class="form-group row">
+                        <label for="inputUsername" class="col-sm-3 col-form-label">Username</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputUsername" formControlName="name"
+                                [(ngModel)]="user.name" placeholder="Username" maxlength="50" />
+                        </div>
+                        <div class="error-message"
+                            *ngIf="signUpForm.controls.name.errors && (signUpForm.controls.name.dirty||signUpForm.controls.name.touched)">
+                            <p class="error-msg" *ngIf="signUpForm.controls.name.errors.required" style="color:red">Name
+                                required</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="inputEmail" formControlName="email"
+                                [(ngModel)]="user.email" placeholder="Email" />
+                        </div>
+                        <div class="error-message"
+                            *ngIf="signUpForm.controls.email.errors && (signUpForm.controls.email.dirty||signUpForm.controls.email.touched)">
+                            <p class="error-msg" *ngIf="signUpForm.controls.email.errors.required" style="color:red">
+                                Email
+                                required</p>
+                            <p class="error-msg" *ngIf="signUpForm.controls.email.errors.email" style="color:red">
+                                Invalid format
+                                (Eg:username@gmail.com)</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="inputPassword" formControlName="pwd"
+                                [(ngModel)]="user.pwd" placeholder="Password" />
+                        </div>
+                        <div class="error-message"
+                            *ngIf="signUpForm.controls.pwd.errors && (signUpForm.controls.pwd.dirty||signUpForm.controls.pwd.touched)">
+                            <p class="error-msg" *ngIf="signUpForm.controls.pwd.errors.required" style="color:red">
+                                Password is
+                                required</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputRePassword" class="col-sm-3 col-form-label">Confirm Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="inputRePassword" formControlName="repwd"
+                                [(ngModel)]="rePwd" placeholder="Confirm Password" />
+                        </div>
+                        <div class="error-message"
+                            *ngIf="signUpForm.controls.repwd.errors && (signUpForm.controls.repwd.dirty||signUpForm.controls.repwd.touched)">
+                            <p class="error-msg" *ngIf="signUpForm.controls.repwd.errors.required" style="color:red">
+                                Confirm
+                                password is required</p>
+                        </div>
+                    </div>
+
+
+                </form>
+
+
+
+                <form class="secondContainer" id="signUpButton">
+                    <a class="btn btn-outline-success" id="button" (click)='register()'>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Sign Up
+                    </a>
+                    <div class="error-message" *ngIf="error">
+                        <p class="error-msg" style="color:red"> password and confirm password should be same</p>
+                    </div>
+                </form>
+
+
+                <div class="container" id="belowLink">
+                    <a href="#">Already you have an account.</a>
+                </div>
+            </div>
+        </div>
     </div>
-
-
-    <form [formGroup]= "signUpForm"class="container" id="signUpForm">
-        <div class="form-group row">
-            <label for="inputUsername" class="col-sm-3 col-form-label">Username</label>
-            <div class="col-sm-9">
-                <input type="text" class="form-control" id="inputUsername" formControlName="name"  [(ngModel)]="user.name" placeholder="Username" maxlength="50"/>
-            </div>
-            <div class="error-message"
-                *ngIf="signUpForm.controls.name.errors && (signUpForm.controls.name.dirty||signUpForm.controls.name.touched)">
-                <p class="error-msg" *ngIf="signUpForm.controls.name.errors.required" style="color:red">Name required</p>                
-              </div>
-        </div>
-        <div class="form-group row">
-            <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
-            <div class="col-sm-9">
-                <input type="email" class="form-control" id="inputEmail" formControlName="email"  [(ngModel)]="user.email" placeholder="Email" />
-            </div>
-            <div class="error-message"
-                *ngIf="signUpForm.controls.email.errors && (signUpForm.controls.email.dirty||signUpForm.controls.email.touched)">
-                <p class="error-msg" *ngIf="signUpForm.controls.email.errors.required" style="color:red">Email required</p>         
-                <p class="error-msg" *ngIf="signUpForm.controls.email.errors.email" style="color:red">Invalid format (Eg:username@gmail.com)</p>                
-              </div>
-        </div>
-        <div class="form-group row">
-            <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
-            <div class="col-sm-9">
-                <input type="password" class="form-control" id="inputPassword" formControlName="pwd"  [(ngModel)]="user.pwd" placeholder="Password" />
-            </div>
-            <div class="error-message"
-                *ngIf="signUpForm.controls.pwd.errors && (signUpForm.controls.pwd.dirty||signUpForm.controls.pwd.touched)">
-                <p class="error-msg" *ngIf="signUpForm.controls.pwd.errors.required" style="color:red"> Password is required</p>
-                  </div>
-        </div>
-        <div class="form-group row">
-            <label for="inputRePassword" class="col-sm-3 col-form-label">Confirm Password</label>
-            <div class="col-sm-9">
-                <input type="password" class="form-control" id="inputRePassword" formControlName="repwd"  [(ngModel)]="rePwd" placeholder="Confirm Password" />
-            </div>
-            <div class="error-message"
-                *ngIf="signUpForm.controls.repwd.errors && (signUpForm.controls.repwd.dirty||signUpForm.controls.repwd.touched)">
-                <p class="error-msg" *ngIf="signUpForm.controls.repwd.errors.required" style="color:red"> Confirm password is required</p>
-                  </div>
-        </div>
-
-
-    </form>
-
-
-     
-    <form class="secondContainer" id="signUpButton">
-        <a  class="btn btn-outline-success" id="button" (click)='register()'>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Sign Up
-    </a>
-    <div class="error-message" *ngIf="error">
-        <p class="error-msg" style="color:red"> password and confirm password should be same</p>
-          </div>
-    </form>
-
-
-    <div class="container" id="belowLink">
-        <a href="#">Already you have an account.</a>
-    </div>
-</div>
-
 </body>
-<app-footer></app-footer>
+<div class="footer">
+    <app-footer></app-footer>
+</div>

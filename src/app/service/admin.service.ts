@@ -49,4 +49,10 @@ export class AdminService {
     console.log("email::::"+email);
     return this.httpClient.get(url);
   }
+
+    public getUsers():Observable<any>{ 
+      const url =`${API_URL}/admin/users`;
+      return this.httpClient.get(url);
+    }
+  
 }

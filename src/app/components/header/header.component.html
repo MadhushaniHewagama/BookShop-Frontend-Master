@@ -1,1 +1,30 @@
-<p>header works!</p>
+<div class="container-fluid">
+    <div class="col-10">
+        <div class="row">
+                <div class="col-2">
+                    <!-- for logo -->
+                </div>
+            <div class="col-7">
+                <div class="headline">
+                    <div class="container" id="txtTopic">
+                        <h1 style="text-align: center;">book store house</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-success" (click)='LOGOUT()'>LOG OUT</button>
+            </div>
+        </div>  
+        <div class="row">
+                <a (click)='HOME()'>Home</a>
+            <a (click)='PROFILE()'>Profile</a>
+            <a (click)='PASTORDER()'>Past Order</a>
+        </div>      
+    </div>
+    <div class="col-2">
+        <!-- for cart -->
+    </div>
+   
+</div>
+
+

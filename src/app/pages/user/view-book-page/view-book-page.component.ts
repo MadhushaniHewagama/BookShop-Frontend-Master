@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book'
 import { UserService } from 'src/app/service/user.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-view-book-page',
@@ -10,18 +11,19 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class ViewBookPageComponent implements OnInit {
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService,private route: ActivatedRoute) { }
 
   public book:Book=new Book();
   public addToCartForm:FormGroup;
   public quantity:number=1;
-  public test:string='1';
+ 
   ngOnInit(): void {
-    this.book.bookID=1;
-    this.loadBookData();
+    this.route.queryParams.subscribe(parms => {
+      this.loadBookData(parms.bookID);
+    });
   }
-  public loadBookData():void{
-    this.userService.getBook(this.test).subscribe(
+  public loadBookData(bookID):void{
+    this.userService.getBook(bookID).subscribe(
       res => {
         this.book.ISBN=res[0].ISBN;
         this.book.author=res[0].author;

@@ -89,14 +89,10 @@
 
           <div class="form-group">
             <label>Category:</label>
-            <select name="cars" class="custom-select mb-3"  id="inputCategory"  [(ngModel)]="book.category"  >
+            <select  class="custom-select mb-3"  id="inputCategory"  [(ngModel)]="book.category" formControlName="category" >
               <!-- <option selected>Custom Select Menu</option> -->
-              <option value="1">Educational</option>
-              <option value="2">Entertainment</option>
-              <option value="3">Health</option>
-              <option value="4">Regligion</option>
-              <option value="5">Comics</option>
-              <option value="6">Other</option>
+              <option *ngFor="let category of categories" [ngValue]="category" >{{category}}</option>
+    
             </select>
             <!-- <input type="text" class="form-control" id="inputCategory" formControlName="category"
               [(ngModel)]="book.category"> -->

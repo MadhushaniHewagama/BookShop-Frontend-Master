@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book';
 import { AdminService } from 'src/app/service/admin.service';
 import { FormGroup, FormControl,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-book-page',
@@ -10,14 +11,15 @@ import { FormGroup, FormControl,Validators } from '@angular/forms';
 })
 export class AddBookPageComponent implements OnInit {
 
-  public book:Book = new Book();
+  public book:Book=new Book() ;
   public addBookForm: FormGroup;
+public categories: any=['Educational','Health','Religion','Comics','Other']
 
-
-  constructor(private adminService:AdminService) { }
+  constructor(private adminService:AdminService, private router: Router) { }
 
   ngOnInit(): void {
     this.createForm();
+    
   }
 
   public createForm(){
@@ -37,8 +39,8 @@ export class AddBookPageComponent implements OnInit {
   public add_book():void{
     this.adminService.addBook(this.book).subscribe(
       res => {
-        this.book=null;
-        console.log(res)
+        this.book=new Book()
+        this.createForm();
       }, 
       err => { console.log(err) }
     )
@@ -72,6 +74,7 @@ export class AddBookPageComponent implements OnInit {
     
     }
     
+
   }
   
 

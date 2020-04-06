@@ -82,7 +82,9 @@ export class UserService {
     console.log("email::::"+email);
     return this.httpClient.get(url);
   }
+ 
 
+  
 }
 
 

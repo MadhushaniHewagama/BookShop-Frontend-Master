@@ -25,5 +25,26 @@ public cart:any;
     )
 
   }
-
+public buyItem(cart_product_id:any,quantity:any):void{
+  this.homeService.buyItem(cart_product_id,quantity).subscribe(
+    res =>{
+      console.log(res)
+      this.loadData();
+    },
+    err => {
+      console.log(err)
+    }
+  )
+}
+public removeItem(cart_product_id:any):void{
+  this.homeService.removeItem(cart_product_id).subscribe(
+    res =>{
+      console.log(res)
+      this.loadData();
+    },
+    err => {
+      console.log(err)
+    }
+  )
+}
 }

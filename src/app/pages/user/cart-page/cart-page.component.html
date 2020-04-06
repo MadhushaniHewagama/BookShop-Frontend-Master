@@ -13,25 +13,33 @@
         
 
     <div class="container-fluid" id="main">
-        <table class="table table-sm table-dark">
-            <thead>
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Quentity</th>
-                    <th scope="col">Price</th>
-                </tr>
-            </thead>
-            <tbody *ngFor="let item of cart;let i =index" >
-                <tr>
-                    <td>{{i+1}}</td>
-                    <td>{{item.title}}</td>
-                    <td>{{item.quantity}}</td>
-                    <td>{{item.selling_price}}</td>
-                </tr>
-            </tbody>
-        </table>
-        
+        <div class="row">
+                <table class="table table-sm table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Quentity</th>
+                                <th scope="col">Price</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let item of cart;let i =index" >
+                            <tr>
+                                <td>{{i+1}}</td>
+                                <td>{{item.title}}</td>
+                                <td><input type="number" value="{{item.quantity}}" /></td>
+                                <td>{{item.selling_price}}</td>
+                                <td><button class="btn btn-success"(click)="buyItem(item.cart_product_id,item.quantity)">Buy item </button><button class="btn btn-success"(click)="removeItem(item.cart_product_id)">Remove</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+        </div>
+        <div class="row">
+            <div class="col-8"></div>
+            <div class="col-4"><button class="btn btn-success">Payment</button></div>
+        </div>
+  
     </div>
    
 </body>

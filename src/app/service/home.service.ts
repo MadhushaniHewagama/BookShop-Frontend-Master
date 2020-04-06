@@ -47,6 +47,22 @@ export class HomeService {
     const url =`${API_URL}/cart/total`;
     return this.httpClient.get(url,{params:params});
   }
+  public buyItem(cart_product_id:any,quantity:any):Observable<any>{
+    const url = `${API_URL}/cart`;
+     const params = {
+       cart_product_id: cart_product_id,
+       quantity: quantity
+     };
+     return this.httpClient.put(url,params);
+       }
+ 
+     
+       public removeItem(cart_product_id:any):Observable<any>{
+         let params = new HttpParams();
+         params=params.set('cart_product_id',cart_product_id);
+         const url = `${API_URL}/cart`;
+         return this.httpClient.delete(url,{params:params});
+       }
 
   
 }

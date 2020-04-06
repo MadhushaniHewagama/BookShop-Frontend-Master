@@ -1,13 +1,11 @@
 body{
-    background-size: cover;
-    height: 940px;
-    width: 1490px;
-    margin:0;
-    padding: 0;
-    background-image: url('../../../../assets/images/profile.jpg');
-    font-family: sans-serif;
-    overflow: hidden;
-  }
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0deg, rgb(100, 189, 139) 0%, rgb(255, 255, 255) 100%);
+  font-family: sans-serif;
+  overflow: hidden;
+}
   
   #main{
     padding-top: 40px;

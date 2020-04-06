@@ -47,6 +47,9 @@ public total:any;
 
   }
   
+  public PASTPAYMENT(): void {
+    this.router.navigate(['/user/viewPayment']);
 
+  }
 
 }

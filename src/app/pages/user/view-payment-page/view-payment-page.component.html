@@ -1,18 +1,48 @@
-<div class="col-sm-7">
-    <table class="table table-sm table-dark">
-        <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">Date Time</th>
-                <th scope="col">Total</th>
-            </tr>
-        </thead>
-        <tbody *ngFor="let item of pastPayments;let i =index">
-            <tr>
-                <td>{{i+1}}</td>
-                <td>{{item.date}}</td>
-                <td>{{item.total_price}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<app-header></app-header>
+
+<body>
+    <div class="row">
+
+        <div class="col-12">
+            <H1 style="text-align: center;">View Payment</H1>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+        <div class="row">
+
+            <div class="col-2"></div>
+
+            <div class="col-8">
+                <table class="table table-sm table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Date Time</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let item of pastPayments;let i =index">
+                        <tr>
+                            <td>{{i+1}}</td>
+                            <td>{{item.date}}</td>
+                            <td>{{item.total_price}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            
+
+    
+
+    </div>
+</body>
+
+<app-footer></app-footer>

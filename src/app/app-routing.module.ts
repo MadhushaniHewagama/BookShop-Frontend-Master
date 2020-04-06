@@ -80,7 +80,7 @@ const routes: Routes = [
     component: ViewUserPageComponent
   },
   {
-    path:'admin/ViewOrders',
+    path:'admin/viewOrders',
     component:ViewOrdersPageComponent
   }
 

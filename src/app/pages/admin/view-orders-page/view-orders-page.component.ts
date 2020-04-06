@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/service/user.service';
 import { AuthService } from 'src/app/service/auth.service';
+import { AdminService } from 'src/app/service/admin.service';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class ViewOrdersPageComponent implements OnInit {
   public Orders: any;
 
 
-  constructor(private userService: UserService, private authService: AuthService) { }
+  constructor(private adminService: AdminService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.loadData();
@@ -21,9 +21,11 @@ export class ViewOrdersPageComponent implements OnInit {
 
 
   public loadData(): void {
-    this.userService.getOrders(this.authService.getEmail()).subscribe(
+    this.adminService.getOrders().subscribe(
       res => {
-        this.Orders = res;
+        this.Orders = res.filter(item => {
+          return (item.status=='1' );
+         });
               },
       err => {
         console.log(err)

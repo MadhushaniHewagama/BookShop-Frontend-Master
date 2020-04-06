@@ -26,6 +26,7 @@ import { CommonModule } from "@angular/common";
 import { HomeComponent } from './pages/home/home.component';
 import { AdminDashBoardComponent } from './pages/admin/admin-dash-board/admin-dash-board.component';
 import { UserDashBoardComponent } from './pages/user/user-dash-board/user-dash-board.component';
+import { AdminHeaderComponent } from './pages/admin/component/admin-header/admin-header.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { UserDashBoardComponent } from './pages/user/user-dash-board/user-dash-b
     ViewOrderPageComponent,
     HomeComponent,
     AdminDashBoardComponent,
-    UserDashBoardComponent
+    UserDashBoardComponent,
+    AdminHeaderComponent
   ],
   imports: [
     BrowserModule,

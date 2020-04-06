@@ -77,27 +77,7 @@ public onSelect(Book: Book): void{
 }
 
 
-  public LOGOUT(): void {
-    this.router.navigate(['home']);
-  }
-
-
-  public ADDBOOK(): void {
-    this.router.navigate(['admin/addBook']);
-  }
-
-  public ORDERS(): void {
-    this.router.navigate(['admin/ViewOrders']);
-  }
-
-  public USERS(): void {
-    this.router.navigate(['admin/viewUsers']);
-  }
-
-
-  public HOME(): void {
-    this.router.navigate(['admin/home']);
-  }
+  
 
   public viewBook(book:Book):void{
     this.router.navigate(["/admin/viewBook"], {

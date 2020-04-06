@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/service/admin.service';
+import { User } from 'src/app/models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-users-page',
@@ -8,7 +10,7 @@ import { AdminService } from 'src/app/service/admin.service';
 })
 export class ViewUsersPageComponent implements OnInit {
   public users: any;
-  constructor(private adminService: AdminService) { }
+  constructor(private adminService: AdminService,private router: Router) { }
 
   ngOnInit(): void {
 
@@ -27,6 +29,11 @@ export class ViewUsersPageComponent implements OnInit {
       }
     )
 
+  }
+  public viewUser(user:User): void{
+    this.router.navigate(["/admin/viewUser"], {
+      queryParams: { email: user.email}
+    });
   }
 
 }

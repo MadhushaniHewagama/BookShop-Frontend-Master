@@ -54,5 +54,9 @@ export class AdminService {
       const url =`${API_URL}/admin/users`;
       return this.httpClient.get(url);
     }
+    public getOrders():Observable<any>{ 
+      const url =`${API_URL}/admin/orders`;
+      return this.httpClient.get(url);
+    }
   
 }

@@ -1,6 +1,6 @@
 
 <body>
-
+        <app-admin-header></app-admin-header>
     <div class="row">
 
         <div class="col-12">
@@ -25,6 +25,7 @@
                             <th scope="col">Email</th>
                             <th scope="col">Telphone</th>
                             <th scope="col">Address</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody *ngFor="let item of users;let i =index">
@@ -34,6 +35,7 @@
                             <td>{{item.email}}</td>
                             <td>{{item.tel}}</td>
                             <td>{{item.address}}</td>
+                            <td><button (click)="viewUser(item)">View</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -47,7 +49,7 @@
 
 </body>
     
-    <div class="footer">
+    
         <app-footer></app-footer>
-    </div>
+
 

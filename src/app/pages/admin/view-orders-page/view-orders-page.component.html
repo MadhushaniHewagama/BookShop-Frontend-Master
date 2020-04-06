@@ -1,5 +1,5 @@
 <body>
-
+        <app-admin-header></app-admin-header>
     <div class="row">
 
         <div class="col-12">
@@ -20,19 +20,23 @@
                     <thead>
                         <tr>
                             <th scope="col"></th>
-                            <th scope="col">UserName</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Telphone</th>
-                            <th scope="col">Orders</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Profit</th>
+                            <th scope="col">Date</th>
                         </tr>
                     </thead>
                     <tbody *ngFor="let item of Orders;let i =index">
                         <tr>
                             <td>{{i+1}}</td>
-                            <td>{{item.name}}</td>
-                            <td>{{item.Email}}</td>
-                            <td>{{item.Telphone}}</td>
-                            <td>{{item.Orders}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.title}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.price}}</td>
+                            <td>{{item.profit}}</td>
+                            <td>{{item.date_time}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -44,11 +48,5 @@
 
     </div>
 
-    <div class="footer">
-        <app-footer></app-footer>
-    </div>
-
-
-
-
 </body>
+<app-footer></app-footer>

@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-10">
+        <div class="col-9">
             <div class="row">
                 <div class="col-2">
 
@@ -11,7 +11,7 @@
 
 
                 </div>
-                <div class="col-7">
+                <div class="col-10">
                     <div class="headline">
                         <div class="container" id="txtTopic">
                             <h1 style="text-align: center;">book store house</h1>
@@ -22,35 +22,47 @@
             </div>
             <div class="row">
 
-                <div class="col-9"> </div>
-                <div class="col-3">
+                <div class="col-7"> </div>
+                <div class="col-5">
                     <a (click)='HOME()'>Home</a>
                     <a (click)='PROFILE()'>Profile</a>
                     <a (click)='PASTORDER()'>Past Order</a>
+                    <a (click)='PASTPAYMENT()'>Past Payment</a>
+
+
+                   
 
                 </div>
+                
 
 
             </div>
         </div>
-        <div class="col-2">
-            <button style="font-size:70px" (click)="viewCart()"><i class='fas fa-cart-arrow-down'
-                    style='font-size:48px;color:rgb(14, 12, 12);background:transparent'></i></button>
+         
+        <div class="col-3">
+            <i class="fas fa-shopping-cart fa-5x"
+                    style='color:rgb(14, 12, 12) ;' (click)="viewCart()"></i>
+           
+            <br>
             <br>
             <div class=" row">
-                <div class="col-11">
+                <div class="col-2">
                     <label for="inputName" class="col-sm-2 col-form-label">Total</label>
+                </div>
+                <div class="col-4">
                     <div class="col-sm-1">
                         <input type="text" [(ngModel)]="total" readonly />
 
                     </div>
                 </div>
-                <div class="col-1"></div>
+
+
+                
             </div>
             <br>
             <br>
-            
-            <button type="button" class="btn btn-success" (click)='LOGOUT()'>LOG OUT</button>
+
+            <button type="button" class="btn btn-success" style='background-color:rgb(14, 12, 12) ;' (click)='LOGOUT()'>LOG OUT</button>
 
         </div>
     </div>

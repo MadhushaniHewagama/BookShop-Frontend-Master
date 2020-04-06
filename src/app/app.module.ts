@@ -27,6 +27,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AdminDashBoardComponent } from './pages/admin/admin-dash-board/admin-dash-board.component';
 import { UserDashBoardComponent } from './pages/user/user-dash-board/user-dash-board.component';
 import { AdminHeaderComponent } from './pages/admin/component/admin-header/admin-header.component';
+import { Header2Component } from './components/header2/header2.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +52,8 @@ import { AdminHeaderComponent } from './pages/admin/component/admin-header/admin
     HomeComponent,
     AdminDashBoardComponent,
     UserDashBoardComponent,
-    AdminHeaderComponent
+    AdminHeaderComponent,
+    Header2Component
   ],
   imports: [
     BrowserModule,

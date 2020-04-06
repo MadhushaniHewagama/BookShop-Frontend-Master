@@ -11,8 +11,12 @@ html{
   background: linear-gradient(0deg, rgb(100, 189, 139) 0%, rgb(34, 31, 31) 100%);
 }
 
+img{
+  padding-top: 0px;
+  margin: 10px;
+}
 .headline{
-  text-align:center;
+  padding-left: 0px;
  
 }
 .headline  h1{
@@ -23,7 +27,20 @@ html{
      font-family: "Times New Roman", Times, serif;}
   
 * {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: auto;
+ 
+  //background-image: url("../../../../assets/images/y.png") ;
+ 
+}
+
+
 div.a {
+  border-radius: 2px;
     text-align: center;
     color: rgb(255, 255, 255) ;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -31,7 +48,7 @@ div.a {
 
   a {
     float: left;
-    color: black;
+    color: rgb(75, 72, 72);
     text-align: center;
     padding: 12px;
     text-decoration: none;
@@ -51,3 +68,4 @@ div.a {
     background-color: dodgerblue;
     color: white;
   }
+  

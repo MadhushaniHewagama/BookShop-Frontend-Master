@@ -1,13 +1,13 @@
+
 body{
-    background-size: cover;
-    height: 940px;
-    width: 1490px;
-    margin:0;
-    padding: 0;
-    background-image: url('../../../../assets/images/profile.jpg');
-    font-family: sans-serif;
-    overflow: hidden;
-  }
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0deg, rgb(100, 189, 139) 0%, rgb(255, 255, 255) 100%);
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
   
   #main{
     padding-top: 40px;
@@ -39,7 +39,7 @@ body{
   
    .image-container {
      padding-top: 10px;
-      padding-left: 25px;
+      padding-left: 110px;
       //padding-right: 20px;
      position:  relative;
       display: inline-block;
@@ -52,6 +52,7 @@ body{
       border: 5px solid rgb(63, 58, 58);
       height: 250px;
       width: 250px;
+     
       //border-radius: 0%;
     }
     

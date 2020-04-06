@@ -1,8 +1,17 @@
 #outline{
-   border: solid 1px black;
+
    margin-top: 100px;
 
 }
+body{
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0deg, rgb(100, 189, 139) 0%, rgb(255, 255, 255) 100%);
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
 #bookPic{
    color:black;
    padding-top: 40px;
@@ -11,7 +20,7 @@
 
 
 #bookForm{
-   padding-top: 100px;
+  
    padding-left: 200px;
    padding-right: 200px;
    margin: 10px;
@@ -29,10 +38,10 @@ p {
  }
  
  img {
-   height: 200px;
-   width: 200px;
-   border: 5px solid #000;
-   border-radius: 50%;
+   height: 350px;
+   width: 300px;
+   border: 2px solid #000;
+   border-radius: 5%;
  }
  
  .select-profile-picture {
@@ -60,3 +69,86 @@ p {
    transform: translate(-50%, -50%);
    opacity: 1;
  }
+
+ 
+*{
+	box-sizing: border-box;
+	outline: none!important;
+}
+
+a{
+    position: relative;
+     display: inline-block;
+    padding: 20px 40px;
+    color: rgb(137, 255, 235);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 17px;
+    overflow: hidden;
+    // display: flex;
+    transition: 0.2s;
+  }
+  a:hover{
+    color: rgb(255, 255, 255);
+	background:  rgb(0, 95, 87);
+	border-radius: 20px;
+    box-shadow: 0 0 10px rgb(17, 218, 167), 0 0 40px rgb(17, 218, 167), 0 0 80px rgb(17, 218, 167);
+    transition-delay: 1s;
+  }
+
+  //for night ride systems
+  a span{
+    position: absolute;
+    display: block;
+  }
+
+  //..............................
+  
+  a span:nth-child(1)  {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent, rgb(0, 95, 87));
+  }
+  a:hover span:nth-child(1) {
+    left: 100%;
+    transition: 1s;
+  }
+  a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,rgb(0, 95, 87));
+  }
+  a:hover span:nth-child(3) {
+    left: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+  }
+  a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,rgb(0, 95, 87));
+  }
+  a:hover span:nth-child(2) {
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+  }
+  a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,rgb(0, 95, 87));
+  }
+  a:hover span:nth-child(4) {
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+  }

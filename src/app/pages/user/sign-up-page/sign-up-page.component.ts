@@ -49,11 +49,19 @@ public error:boolean=false;
 
     )
 
-
-    }else{
+    }
+    
+    else{
       this.error=true;
     }
   }
+
+  public Already(): void {
+    
+        this.router.navigate(['signIn']);
+    
+  }
+
 
 
 }

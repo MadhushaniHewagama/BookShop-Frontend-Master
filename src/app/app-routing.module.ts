@@ -15,7 +15,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CartPageComponent } from './pages/user/cart-page/cart-page.component';
 import { ViewUsersPageComponent } from './pages/admin/view-users-page/view-users-page.component';
 import { ViewOrdersPageComponent } from './pages/admin/view-orders-page/view-orders-page.component';
-
+//routes
 const routes: Routes = [
   {
     path: '',
@@ -67,21 +67,21 @@ const routes: Routes = [
     path: 'admin/addBook',
     component: AddBookPageComponent
   },
-   {
+  {
     path: 'admin/viewBook',
     component: EditBookPageComponent
   },
   {
     path: 'admin/viewUsers',
-    component:ViewUsersPageComponent
+    component: ViewUsersPageComponent
   },
   {
     path: 'admin/viewUser',
     component: ViewUserPageComponent
   },
   {
-    path:'admin/viewOrders',
-    component:ViewOrdersPageComponent
+    path: 'admin/viewOrders',
+    component: ViewOrdersPageComponent
   }
 
 ];
